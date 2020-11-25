@@ -58,5 +58,17 @@ namespace bab2_membacaDataGambar_image2
             }
          pictureBox2.Image = objBitmap1;
       }
+
+      private void button4_Click(object sender, EventArgs e)
+      {
+         objBitmap1 = new Bitmap(objBitmap);
+         for(int x = 0; x < objBitmap.Width; x++)
+            for (int y = 0; y < objBitmap.Height; y++)
+            {
+               Color w = objBitmap.GetPixel(x, y);
+               objBitmap1.SetPixel(x, objBitmap.Height - 1 - y, w);
+            }
+         pictureBox2.Image = objBitmap1;
+      }
    }
 }
