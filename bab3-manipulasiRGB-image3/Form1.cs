@@ -50,5 +50,24 @@ namespace bab3_manipulasiRGB_image3
             }
          pictureBox2.Image = objBitmap1;
       }
+
+      private void button3_Click(object sender, EventArgs e)
+      {
+         objBitmap1 = new Bitmap(objBitmap);
+         for(int x = 0; x < objBitmap.Width; x++)
+            for(int y = 0; y < objBitmap1.Height; y++)
+            {
+               Color W = objBitmap.GetPixel(x, y);
+               int r = W.R;
+               Color wb = Color.FromArgb(r, 0, 0);
+               objBitmap1.SetPixel(x, y, wb);
+            }
+         pictureBox2.Image = objBitmap1;
+      }
+
+      private void pictureBox2_Click(object sender, EventArgs e)
+      {
+
+      }
    }
 }
